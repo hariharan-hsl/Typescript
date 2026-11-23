@@ -1,0 +1,132 @@
+:root {
+  --page-color: #f4f7fb;
+  --card-color: #ffffff;
+  --text-color: #1e293b;
+  --muted-color: #64748b;
+  --border-color: #dbe3ee;
+  --primary-color: #2563eb;
+}
+
+/* The same layout also works with the user's dark theme preference. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-color: #111827;
+    --card-color: #1f2937;
+    --text-color: #f8fafc;
+    --muted-color: #cbd5e1;
+    --border-color: #475569;
+    --primary-color: #60a5fa;
+  }
+}
+
+body {
+  background: var(--page-color);
+  color: var(--text-color);
+}
+
+.page {
+  width: min(92%, 1000px);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+.page-header h1 {
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+.muted {
+  color: var(--muted-color);
+}
+
+/* Two columns on larger screens, one column on small screens. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-color);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 6%);
+}
+
+.card-title {
+  margin: 0 0 20px;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.stack {
+  gap: 12px;
+}
+.row {
+  gap: 8px;
+}
+
+.btn {
+  padding: 9px 14px;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+.btn-secondary {
+  background: var(--card-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+.btn:hover {
+  opacity: 0.85;
+}
+
+input[type="text"] {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-color);
+  color: var(--text-color);
+  font: inherit;
+}
+
+.counter-value {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.user-list li {
+  padding: 10px 0;
+}
+
+@media (max-width: 650px) {
+  .page {
+    width: 92%;
+    padding: 24px 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card {
+    padding: 18px;
+  }
+  .row {
+    align-items: stretch;
+  }
+  .row .btn {
+    flex: 1;
+  }
+}
