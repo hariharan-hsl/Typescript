@@ -30,6 +30,7 @@ getUsers()
       console.log(user.email);
     });
   })
+  
   .catch((error: Error) => {
     console.log(error.message);
   });
